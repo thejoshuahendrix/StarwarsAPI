@@ -15,11 +15,32 @@ class PeopleList extends PureComponent {
     if (!loading) {
       return (
         <View style={styles.container}>
+          <table>
+            <tbody>
+
+            
+          <tr>
+              <td>Name</td>
+              <td>Hair Color</td>
+              <td>Eye Color</td>
+              <td>Weight</td>
+              <td>Height</td>
+          </tr>
           {people.length ? (
-            people.map((person, i) => <Text key={i}>{person.name}</Text>)
+            people.map((person, i) => (
+              <tr key={i}>
+                  <td>{person.name}</td>
+                  <td>{person.hair_color}</td>
+                  <td>{person.eye_color}</td>
+                  <td>{person.mass}</td>
+                  <td>{person.height}</td>
+              </tr>
+            ))
           ) : (
             <Text>No People</Text>
           )}
+          </tbody>
+          </table>
         </View>
       );
     } else {
